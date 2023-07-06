@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><%= category %> Products</h1>
+    <a href="/products/create">Tambah Data</a>
+    <% if(category !== 'All') { %>
+    <a href="/products">Ke All Products</a>
+    <% } %>
+    <ul>
+      <% for(let product of products) { %>
+      <li>
+        <a href="/products/<%= product._id %>"> <%= product.name %> </a>
+      </li>
+      <% } %>
+    </ul>
+    <a href="/products" style="margin: auto; text-decoration: none"
+      >ke halaman produk</a
+    >
+  </body>
+</html>
